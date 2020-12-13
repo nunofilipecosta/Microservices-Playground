@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace MicroservicePlayground.Web
+namespace MicroservicesPlayground.EventCatalog.Api
 {
     public class Program
     {

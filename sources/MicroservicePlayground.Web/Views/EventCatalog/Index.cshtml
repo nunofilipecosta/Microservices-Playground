@@ -12,7 +12,7 @@
         <label class="sr-only" for="SelectedCategory">Category</label>
         <select asp-for="SelectedCategory" asp-items="categoryListItems" class="custom-select custom-select-lg"></select>
         @*<select asp-for="SelectedCategory" asp-items="categoryListItems"></select>*@
-        <button type="submit" class="btn btn-primary btn-lg mb-2">FILTER</button>
+        <button type="submit" class="btn btn-primary btn-lg mb-2">Filter</button>
     </form>
 </div>
 
@@ -27,7 +27,7 @@
                         <h5 class="card-title">@item.Name</h5>
                         <h6 class="card-subtitle mb-2 text-muted">@item.Price</h6>
                         <p class="card-text">@item.Description</p>
-                        <a class="btn btn-primary" type="button" asp-action="Details" asp-route-eventId="@item.EventId">DETAILS</a>
+                        <a class="btn btn-primary" type="button" asp-action="Details" asp-route-eventId="@item.EventId">Details</a>
                         @*<a href="#" class="btn btn-primary">View Details</a>*@
                         <a href="#" class="btn btn-success">Add to cart</a>
                     </div>

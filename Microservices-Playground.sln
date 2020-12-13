@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroservicePlayground.Web", "sources\MicroservicePlayground.Web\MicroservicePlayground.Web.csproj", "{CA7673F0-DE65-44D9-8020-EA1D76E8611A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroservicesPlayground.EventCatalog.Api", "sources\MicroservicesPlayground.EventCatalog.Api\MicroservicesPlayground.EventCatalog.Api.csproj", "{6042B12E-A5D6-497B-9C7B-63574BCB4A9A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,6 +24,10 @@ Global
 		{CA7673F0-DE65-44D9-8020-EA1D76E8611A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA7673F0-DE65-44D9-8020-EA1D76E8611A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA7673F0-DE65-44D9-8020-EA1D76E8611A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6042B12E-A5D6-497B-9C7B-63574BCB4A9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6042B12E-A5D6-497B-9C7B-63574BCB4A9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6042B12E-A5D6-497B-9C7B-63574BCB4A9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6042B12E-A5D6-497B-9C7B-63574BCB4A9A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

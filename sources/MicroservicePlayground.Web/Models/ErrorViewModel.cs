@@ -1,5 +1,3 @@
-using System;
-
 namespace MicroservicePlayground.Web.Models
 {
     public class ErrorViewModel
