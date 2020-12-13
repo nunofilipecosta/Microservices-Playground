@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MicroservicesPlayground.EventCatalog.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/categories")]
     [ApiController]
     public class CategoryController : ControllerBase
     {
@@ -21,10 +21,13 @@ namespace MicroservicesPlayground.EventCatalog.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<CategoryDto>>> Get()
+        public async Task<ActionResult<List<CategoryDto>>> Get()
         {
             var result = await _categoryRepository.GetAllCategories();
-            return Ok(_mapper.Map<List<CategoryDto>>(result));
+
+
+            var result2 = _mapper.Map<List<CategoryDto>>(result);
+            return Ok(result2);
 
         }
     }

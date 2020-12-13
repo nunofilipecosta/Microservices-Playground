@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System;
+using System.Net.Http;
 
 namespace MicroservicePlayground.Web
 {
@@ -21,6 +23,10 @@ namespace MicroservicePlayground.Web
         {
             services.AddControllersWithViews();
             services.AddSingleton<IEventCatalogService, EventCatalogService>();
+            //services.AddScoped<IEventCatalogService, HttpEventCatalogService>((serviceProvider) => {
+            //    return new HttpEventCatalogService(new HttpClient() { BaseAddress = new Uri(Configuration.GetValue("ApiConfigs:EventCatalog:Uri")) }); }) ;
+
+            services.AddHttpClient<IEventCatalogService, HttpEventCatalogService>(c => c.BaseAddress = new Uri(Configuration["ApiConfigs:EventCatalog:Uri"]));
 
         }
 

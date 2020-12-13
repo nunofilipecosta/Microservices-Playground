@@ -4,14 +4,16 @@ using MicroservicesPlayground.EventCatalog.Api.DbContexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace MicroservicesPlayground.EventCatalog.Api.Migrations
 {
     [DbContext(typeof(EventCatalogDbContext))]
-    partial class EventCatalogDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201213224518_FixCategoryRelationWithEvents")]
+    partial class FixCategoryRelationWithEvents
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

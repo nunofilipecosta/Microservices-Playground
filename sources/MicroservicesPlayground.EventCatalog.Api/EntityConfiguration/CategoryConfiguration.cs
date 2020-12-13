@@ -11,9 +11,6 @@ namespace MicroservicesPlayground.EventCatalog.Api.EntityConfiguration
             builder.HasKey(c => c.CategoryId);
             builder.Property(c => c.CategoryId).IsRequired();
             builder.Property(c => c.Name).IsRequired();
-
-            builder.HasMany(c => c.Events)
-                .WithOne(e => e.Category);
         }
     }
 }

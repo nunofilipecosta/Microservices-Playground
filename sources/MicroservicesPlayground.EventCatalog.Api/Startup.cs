@@ -24,6 +24,12 @@ namespace MicroservicesPlayground.EventCatalog.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<EventCatalogDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<IEventRepository, EventRepository>();
+
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -31,11 +37,7 @@ namespace MicroservicesPlayground.EventCatalog.Api
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "MicroservicesPlayground.EventCatalog.Api", Version = "v1" });
             });
 
-            services.AddDbContext<EventCatalogDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddScoped<ICategoryRepository, CategoryRepository>();
-            services.AddScoped<IEventRepository, EventRepository>();
-
-            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+          
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,11 +46,14 @@ namespace MicroservicesPlayground.EventCatalog.Api
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "MicroservicesPlayground.EventCatalog.Api v1"));
             }
 
             app.UseHttpsRedirection();
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "MicroservicesPlayground.EventCatalog.Api v1"));
+
+            
 
             app.UseRouting();
 

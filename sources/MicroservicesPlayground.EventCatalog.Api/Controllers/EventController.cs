@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MicroservicesPlayground.EventCatalog.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/events")]
     [ApiController]
     public class EventController : ControllerBase
     {
