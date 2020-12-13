@@ -28,7 +28,7 @@ namespace MicroservicePlayground.Web.Controllers
                 Categories = getCategories.Result,
                 Events = getEvents.Result,
                 NumberOfItems = 0,
-                SelectedCategory = Guid.Empty
+                SelectedCategory = categoryId
             };
 
             return View(viewModel);
@@ -39,6 +39,13 @@ namespace MicroservicePlayground.Web.Controllers
         public IActionResult Filter([FromForm] Guid selectedCategory)
         {
             return RedirectToAction("Index", new { categoryId = selectedCategory });
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Details(Guid eventId)
+        {
+            var viewModel = await this.eventCatalogService.GetEvent(eventId);
+            return View(viewModel);
         }
     }
 
