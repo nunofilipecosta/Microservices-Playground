@@ -33,6 +33,7 @@ namespace SampleService
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "SampleService", Version = "v1" });
             });
+            services.AddHealthChecks().AddCheck<CoinsInfoHealthCheck>("CoinsEndpoint");
 
             // This will allow us read the configurations from the appsettings as well the 
             // secret key store
@@ -57,7 +58,10 @@ namespace SampleService
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHealthChecks("/health");
             });
+
+
         }
     }
 }
