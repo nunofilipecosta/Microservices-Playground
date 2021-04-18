@@ -14,6 +14,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroservicePlayground.Web"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroservicesPlayground.EventCatalog.Api", "sources\MicroservicesPlayground.EventCatalog.Api\MicroservicesPlayground.EventCatalog.Api.csproj", "{6042B12E-A5D6-497B-9C7B-63574BCB4A9A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sources", "sources", "{5441BE08-3006-4531-8CF4-0765F8BBD430}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleService", "sources\SampleService\SampleService.csproj", "{B26994A9-3E8E-43EA-A22A-8D880EAFF54D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,11 +32,18 @@ Global
 		{6042B12E-A5D6-497B-9C7B-63574BCB4A9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6042B12E-A5D6-497B-9C7B-63574BCB4A9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6042B12E-A5D6-497B-9C7B-63574BCB4A9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B26994A9-3E8E-43EA-A22A-8D880EAFF54D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B26994A9-3E8E-43EA-A22A-8D880EAFF54D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B26994A9-3E8E-43EA-A22A-8D880EAFF54D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B26994A9-3E8E-43EA-A22A-8D880EAFF54D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9E9BD839-BBA4-4249-9F50-C0FC7E0399B2}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B26994A9-3E8E-43EA-A22A-8D880EAFF54D} = {5441BE08-3006-4531-8CF4-0765F8BBD430}
 	EndGlobalSection
 EndGlobal
